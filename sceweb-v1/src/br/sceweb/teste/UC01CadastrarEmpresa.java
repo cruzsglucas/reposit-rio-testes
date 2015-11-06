@@ -30,9 +30,9 @@ public class UC01CadastrarEmpresa {
 
 	@Test
 	public void CT01UC01FBCadastrarEmpresa_com_sucesso() {
-		empresaDAO.exclui(empresa);
+		empresaDAO.exclui(empresa.getCnpj());
 		assertEquals(1, empresaDAO.adiciona(empresa));
-		empresaDAO.exclui(empresa);
+		empresaDAO.exclui(empresa.getCnpj());
 			
 	}
 	
@@ -67,7 +67,7 @@ public class UC01CadastrarEmpresa {
 	
 	@AfterClass
 	public static void tearDownAfterClass() throws Exception {
-		empresaDAO.exclui(empresa);
+		empresaDAO.exclui(empresa.getCnpj());
 	}
 }
 
